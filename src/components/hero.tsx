@@ -7,10 +7,10 @@ export function Hero() {
       <div className="mx-auto flex max-w-3xl flex-col items-center px-4 pt-6 pb-8 text-center">
         <h1 className="font-heading text-5xl leading-[0.95] font-extrabold tracking-tight text-zinc-950 sm:text-6xl">
           <span className="block">
-            Clo<span className="text-zinc-400">ne</span>
+            Frang<span className="text-zinc-400">rance</span>
           </span>
           <span className="block">
-            Spread<span className="text-zinc-400">sheet</span>
+            Bi<span className="text-zinc-400">ble</span>
           </span>
         </h1>
 

@@ -14,7 +14,7 @@ export function SiteHeader({ region }: SiteHeaderProps) {
               <path d="M9 3h6v3h-6zM7 7h10l2 13H5z" />
             </svg>
           </span>
-          Clonespreadsheet.com
+          Frangrance Bible
         </a>
         <nav className="flex items-center gap-4 font-mono text-[10px] text-zinc-700">
           <Flag className="h-3 w-4 rounded-[1px] shadow-sm" />
