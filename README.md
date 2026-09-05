@@ -1,32 +1,50 @@
-# React + TypeScript + Vite
+# Clone Spreadsheet
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A searchable directory of fragrance clones and perfume dupes: affordable alternatives to designer and niche scents, with the discount, price, and scent similarity for each match.
 
-Currently, two official plugins are available:
+Built with React 19, TypeScript, Vite, Tailwind CSS v4, and shadcn/ui.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Status
 
-## React Compiler
+The UI is complete for the landing page; the catalogue is static mock data in `src/data/clones.ts`. Search and the US/EU price toggle work client-side against that data. There is no backend yet.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run locally
 
-## Expanding the Oxlint configuration
+Requires Node.js 22 or newer.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open http://127.0.0.1:4731. Vite hot-reloads on save.
+
+Other scripts:
+
+```bash
+npm run build     # typecheck + production build into dist/
+npm run preview   # serve the production build
+npm run lint      # oxlint
+```
+
+## Project layout
+
+```
+src/
+  App.tsx                      page shell: search, count, currency toggle, card grid
+  data/clones.ts               mock catalogue and the Clone type
+  components/
+    site-header.tsx            top bar with logo and links
+    hero.tsx                   title, trust badge, intro copy
+    currency-toggle.tsx        US / EU segmented control
+    clone-card.tsx             one clone: bottle, names, discount, price, similarity, deal link
+    bottle-icon.tsx            placeholder bottle illustration
+    flags.tsx                  inline SVG flags
+    ui/                        shadcn/ui primitives (Badge, Card, Input)
+```
+
+## Next steps
+
+- Replace `src/data/clones.ts` with a real data source (API, spreadsheet export, or CMS).
+- Swap `BottleIcon` for product images.
+- Wire the "Suggest new clone" and "Report an issue" links to forms.

@@ -20,11 +20,11 @@ export function CloneCard({ clone, region }: CloneCardProps) {
   const format = formatters[region]
 
   return (
-    <Card className="gap-0 rounded-md py-0 ring-zinc-200 transition-shadow hover:shadow-md">
-      <div className="flex h-24 items-center justify-center pt-4">
+    <Card className="h-full gap-0 rounded-md py-0 ring-zinc-200 transition-shadow hover:shadow-md">
+      <div className="flex h-24 shrink-0 items-center justify-center pt-4">
         <BottleIcon color={clone.color} className="h-16 w-14 drop-shadow-sm" />
       </div>
-      <CardContent className="flex flex-col gap-2 px-3 pt-3 pb-4 font-heading">
+      <CardContent className="flex flex-1 flex-col gap-2 px-3 pt-3 pb-4 font-heading">
         <div>
           <h3 className="text-[13px] leading-tight font-bold text-zinc-950">
             Clone of &ldquo;{clone.original.house} - {clone.original.name}&rdquo;
@@ -49,7 +49,7 @@ export function CloneCard({ clone, region }: CloneCardProps) {
           href={clone.dealUrl}
           target="_blank"
           rel="noreferrer noopener"
-          className="mt-1 inline-flex w-fit items-center gap-0.5 text-[10px] font-medium text-emerald-600 hover:text-emerald-700 hover:underline"
+          className="mt-auto inline-flex w-fit items-center gap-0.5 pt-1 text-[10px] font-medium text-emerald-600 hover:text-emerald-700 hover:underline"
         >
           View Deal
           <ArrowUpRight className="size-3" />
